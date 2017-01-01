@@ -2,14 +2,22 @@ public class Rational{
 	private final long numerator;
 	private final long denominator;
 
-	public int gcd(int p, int q){
+	// gcd(|p|,|q|)
+	private static int gcd(int p, int q){
+		if(p < 0) p = -p;
+		if(q < 0) q = -q;
 		if(q==0) return p;
 		int r = p % q;
 		return gcd(q,r);
 	}
 
 	public Rational(int numerator, int denominator){
+		if(denominator == 0) throw new RuntimeException("The denominator is zero!");
 		int cd = gcd(numerator, denominator);
+		if(denominator < 0){
+			numerator = -numerator;
+			denominator = -denominator;
+		}
 		numerator /= cd;
 		denominator /= cd;
 		this.numerator = numerator;
