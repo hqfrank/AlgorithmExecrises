@@ -11,6 +11,7 @@ public class Client1213{
 		System.out.println(transaction);
 		Transaction transaction2 = new Transaction("Frank 1/1/2017 10000.0");
 		System.out.println(transaction2);
+		// client of 1.2.14
 		System.out.println(transaction2.equals(transaction));
 	}
 }

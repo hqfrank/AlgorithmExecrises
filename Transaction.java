@@ -36,6 +36,8 @@ public class Transaction{
 		return who() + " " + when() + " " + amount();
 	}
 
+	// Solution of 1.2.14
+
 	public boolean equals(Object x){
 		if(this == x) return true;
 		if(x == null) return false;
